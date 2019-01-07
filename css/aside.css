@@ -92,15 +92,11 @@
   width: 140px;
   height: 140px;
   border-radius: 100%;
-  -webkit-transition: transform 0.2s ease;
-  -o-transition: transform 0.2s ease;
-  transition: transform 0.2s ease;
 }
 .author-avatar img:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
+  transform: rotate(666turn);
+  transition-duration: 59s;
+  transition-timing-function: cubic-bezier(0.34, 0, 0.84, 1);
 }
 .author-name {
   font-size: 24px;
