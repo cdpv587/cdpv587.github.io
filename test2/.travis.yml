@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+- '4'
+branches:
+  only:
+  - master
+before_install:
+- openssl aes-256-cbc -K $encrypted_3cfeadcd7118_key -iv $encrypted_3cfeadcd7118_iv
+  -in id_rsa.enc -out id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp .travis/ssh_config ~/.ssh/config
+- git config --global user.name 'cdpv587'
+- git config --global user.email 271406049@qq.com
+install:
+- npm install hexo-cli -g
+- npm install
+script:
+- npm run deploy
+# .travis.yml 配置
+cache:
+  directories:
+    - node_modules
