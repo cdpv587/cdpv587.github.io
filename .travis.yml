@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- '4'
+- '8'
 branches:
   only:
   - travis
@@ -23,6 +23,5 @@ install:
 script:
 - hexo clean
 - hexo g
-
 after_success:
 - hexo deploy
